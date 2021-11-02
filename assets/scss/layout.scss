@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    /* text-align: center; */
+
+    #layout-main{
+        height: 100%;
+    }
+}
+
+
+#flash_msg{
+    // display: inline;
+    color: rgb(22, 10, 10);
+    height: 30px;
+    width: 172px;
+    // background-color: green;
+    position: relative;
+    animation: movein 1.4s ease 1 forwards, moveout 1.4s ease 4.4s 1 forwards ;
+    
+    // animation-duration: 1s;
+    // animation-iteration-count: 1;
+    // animation-direction: alternate;
+
+  }
+
+  #flash-text{
+    height: 90%;
+    width: 100%;
+  }
+
+  #flash_bar_in, #flash_bar_out{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: rgb(26, 75, 236);
+    animation:  barout 3s ease 1.4s 1 forwards;
+    // z-index: 2;
+  }
+
+  @keyframes movein{
+    0%{ left: -200px;}
+    100%{left: 10px;}
+  }
+  @keyframes moveout{
+    0%{ left: 10px;}
+    100%{left: -200px;}
+  }
+  // @keyframes bg_change{
+  //   0%{ background: linear-gradient(to right, rgb(13, 238, 24) 0%,rgb(13, 238, 24) 99%, #172718 99% ,#172718 100% );}
+  //   100%{background: linear-gradient(to right, rgb(13, 238, 24) 0%,rgb(13, 238, 24) 1%, #172718 1% ,#172718 100% );}
+  // }
+
+  @keyframes barout{
+    0% {width: 100%;}
+    100%{ width: 0%;}
+  }

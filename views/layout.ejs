@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>
+            <%= title  %>
+        </title>
+        <!-- <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script> -->
+      
+        <!-- <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  
+        <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+
+        <%- style %>
+        
+    </head>
+
+    <body>
+        <%- include('_header'); %>
+        
+        <% if(flash.success && flash.success.length > 0){ %>
+            <% if (flash.success=='Logged In successfully !' || flash.success=='Post created!'){%>
+                <div id="flash_msg" style="background-color:greenyellow; ">
+                    <div id="flash-text">
+                        <%= flash.success %>
+                    </div>
+                   
+                    <div id="flash_bar_in">
+                        
+                    </div>
+                    
+                </div> 
+
+                
+                
+                <%}else if(flash.success=='Logged Out successfully !' || flash.success=='Post deleted!'){%>
+                    
+                    <div id="flash_msg" style="background-color:red; ">
+                        <div id="flash-text">
+                            <%= flash.success %>
+                        </div>
+                        <div id="flash_bar_out">
+                           
+                        </div>
+                    </div> 
+                    
+                    
+                    <%}%>
+               
+        <% } %>
+ 
+
+
+
+        <main id="layout-main">
+            <%- body %>
+
+        </main>
+
+
+        <%- include('_footer'); %>
+
+        <%- script %>
+        
+      
+      
+
+
+        <!-- <script src="/js/layout.js" ></script> -->
+    </body>
+</html>
