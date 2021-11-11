@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="/css/home.css">
-
+<link rel="stylesheet" href="/css/chat_box.css">
 
 <h1>
     <%= title %>
@@ -38,6 +38,26 @@
                     <%} %>
                     
                 </section>
+
+                <%- include('_chat_box') -%>
             </div>
+
+
+
             <script src="/js/home_post_comments.js" ></script>
             <script src="/js/home_posts.js"></script>
+            
+            <script src="js/toggle_likes.js"></script>
+            <script>
+                $('.toggle-like-button').each(function(){
+                    let self = this;
+                    let toggleLike = new ToggleLike(self);
+                });
+            </script>
+            <script src=https://cdn.socket.io/4.3.2/socket.io.js></script>
+            <script src="/js/chat_engine.js"></script>
+            <% if (locals.user){ %>
+            <script>
+                new ChatEngine('user-chat-box', '<%= locals.user.email %>')
+            </script>
+            <% } %>
